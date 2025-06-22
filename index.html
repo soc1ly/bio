@@ -19,16 +19,6 @@
       overflow-x: hidden;
     }
 
-    canvas#rain {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-      pointer-events: none;
-    }
-
     header, .hero, .section, footer {
       position: relative;
       z-index: 1;
@@ -50,7 +40,7 @@
       transition: color 0.2s;
     }
     header nav a:hover {
-      color: #6d3eff;
+      color: #ffc745;
     }
 
     .hero {
@@ -76,7 +66,7 @@
       border-radius: 10px;
       font-weight: bold;
       text-decoration: none;
-      background: #6d3eff;
+      background: #ffc745;
       color: white;
       display: inline-block;
       transition: background 0.3s;
@@ -114,8 +104,6 @@
   </style>
 </head>
 <body>
-
-<canvas id="rain"></canvas>
 
 <header>
   <nav>
@@ -167,52 +155,8 @@
 </section>
 
 <footer>
-  &copy; 2025 soc1ly. Все права защищены.
+  © 2025 soc1ly. Все права защищены.
 </footer>
-
-<script>
-  // Эффект дождя (мягкий серый, по всей странице)
-  const canvas = document.getElementById("rain");
-  const ctx = canvas.getContext("2d");
-
-  let width = canvas.width = window.innerWidth;
-  let height = canvas.height = window.innerHeight;
-
-  const drops = Array.from({ length: 400 }, () => ({
-    x: Math.random() * width,
-    y: Math.random() * height,
-    length: Math.random() * 20 + 10,
-    speed: Math.random() * 2 + 2
-  }));
-
-  function drawRain() {
-    ctx.clearRect(0, 0, width, height);
-    ctx.strokeStyle = "rgba(128, 128, 128, 0.2)";
-    ctx.lineWidth = 1;
-
-    for (let drop of drops) {
-      ctx.beginPath();
-      ctx.moveTo(drop.x, drop.y);
-      ctx.lineTo(drop.x, drop.y + drop.length);
-      ctx.stroke();
-
-      drop.y += drop.speed;
-      if (drop.y > height) {
-        drop.y = -drop.length;
-        drop.x = Math.random() * width;
-      }
-    }
-
-    requestAnimationFrame(drawRain);
-  }
-
-  drawRain();
-
-  window.addEventListener("resize", () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  });
-</script>
 
 </body>
 </html>
