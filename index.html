@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>soc1ly | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Unbounded', sans-serif;
+      background: #f9f9f9;
+      color: #111;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    canvas#rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    header, .hero, .section, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      background-color: #0d0d0d;
+      color: white;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+    }
+    header nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    header nav a:hover {
+      color: #6d3eff;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3rem 5%;
+      background: linear-gradient(to right, #f2f2ff, #fff);
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      max-width: 50%;
+    }
+    .hero-text h1 {
+      font-size: 3rem;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+    .hero-text a {
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      background: #6d3eff;
+      color: white;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .hero-text a:hover {
+      background: #4c2ecf;
+    }
+
+    .section {
+      padding: 2rem 5%;
+    }
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+    .tech-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .card {
+      border: 2px dashed #000;
+      border-radius: 10px;
+      padding: 1rem;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #0d0d0d;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="rain"></canvas>
+
+<header>
+  <nav>
+    <a href="https://t.me/fjilr" target="_blank">Telegram</a>
+    <a href="https://discordapp.com/users/javaassist" target="_blank">Discord</a>
+    <a href="https://funpay.com/users/6612395/" target="_blank">FunPay</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Привет, я <span style="color: #6d3eff;">soc1ly</span></h1>
+    <p>Разработчик с уклоном в <strong>Minecraft-инфраструктуру</strong> и уникальные <strong>веб-интерфейсы</strong>. Мне нравится соединять код с эстетикой, потому что это круто!</p>
+    <a href="http://www.honeymine.ru" target="_blank">Мой основной проект</a>
+  </div>
+  <div class="hero-img">
+    <img src="minecraft-building.png" alt="Minecraft Build" style="max-width: 400px;" />
+  </div>
+</section>
+
+<section class="section">
+  <h2>Мой опыт</h2>
+  <p>У меня большой опыт в разработке Minecraft-серверов. Работал над успешными проектами с высоким онлайном:</p>
+  <ul>
+    <li><strong>WellWorld</strong> — 120 онлайн</li>
+    <li><strong>HideForce</strong> — 100 онлайн</li>
+    <li><strong>ClearWorld</strong> — 90 онлайн</li>
+    <li><strong>SpaceGrief</strong> — 80 онлайн</li>
+    <li><strong>NetherDay</strong> — 60 онлайн</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Стеки технологий</h2>
+  <div class="grid tech-grid">
+    <div class="card">
+      <h3>Java</h3>
+      <p>Use Active<br/>Основной язык для Minecraft-плагинов и серверной логики</p>
+    </div>
+    <div class="card">
+      <h3>AutoHotKey</h3>
+      <p>Use Often<br/>Скрипты автоматизации задач и макросов</p>
+    </div>
+    <div class="card">
+      <h3>Python</h3>
+      <p>Use Often<br/>Скрипты, анализ данных, Telegram-боты, автоматизация</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 soc1ly. Все права защищены.
+</footer>
+
+<script>
+  // Эффект дождя (мягкий серый, по всей странице)
+  const canvas = document.getElementById("rain");
+  const ctx = canvas.getContext("2d");
+
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+
+  const drops = Array.from({ length: 400 }, () => ({
+    x: Math.random() * width,
+    y: Math.random() * height,
+    length: Math.random() * 20 + 10,
+    speed: Math.random() * 2 + 2
+  }));
+
+  function drawRain() {
+    ctx.clearRect(0, 0, width, height);
+    ctx.strokeStyle = "rgba(128, 128, 128, 0.2)";
+    ctx.lineWidth = 1;
+
+    for (let drop of drops) {
+      ctx.beginPath();
+      ctx.moveTo(drop.x, drop.y);
+      ctx.lineTo(drop.x, drop.y + drop.length);
+      ctx.stroke();
+
+      drop.y += drop.speed;
+      if (drop.y > height) {
+        drop.y = -drop.length;
+        drop.x = Math.random() * width;
+      }
+    }
+
+    requestAnimationFrame(drawRain);
+  }
+
+  drawRain();
+
+  window.addEventListener("resize", () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
+</script>
+
+</body>
+</html>
