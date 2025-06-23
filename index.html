@@ -3,237 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>soc1ly | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+  <title>soc1ly — Minecraft разработчик</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-    html, body {
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      font-family: 'Unbounded', sans-serif;
-      background: #f9f9f9;
-      color: #111;
-      position: relative;
-      overflow-x: hidden;
+      background-color: #111;
+      color: #eee;
     }
 
-    header, .hero, .section, footer {
-      position: relative;
-      z-index: 1;
+    .orange-gradient {
+      background: linear-gradient(90deg, #f1c63b 0%, #e6872e 100%);
+      color: white;
     }
 
-    header {
-      background-color: #0d0d0d;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .orange-gradient h1,
+    .orange-gradient h2,
+    .orange-gradient p,
+    .orange-gradient a,
+    .orange-gradient strong,
+    .orange-gradient li {
+      color: white;
     }
 
-    header nav {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    header nav a {
-      color: #0d0d0d;
+    .orange-gradient a {
       background-color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
+      color: #111;
+      padding: 10px 18px;
+      border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
-      transition: transform 0.2s ease, background 0.2s, color 0.2s;
+      transition: background-color 0.3s ease;
     }
 
-    header nav a:hover {
-      transform: scale(1.05);
-      background: #ffc745;
-      color: white;
+    .orange-gradient a:hover {
+      background-color: #f9e06d;
+      color: #111;
     }
 
     .hero {
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding: 3rem 5%;
-      background: linear-gradient(to right, #f2f2ff, #fff);
-      flex-wrap: wrap;
-    }
-
-    .hero-text {
-      max-width: 50%;
+      padding: 60px 10%;
     }
 
     .hero-text h1 {
-      font-size: 3rem;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
     }
 
     .hero-text p {
       font-size: 1.2rem;
-      margin: 1rem 0;
+      margin-bottom: 20px;
     }
 
-    .hero-text a {
-      padding: 0.75rem 1.5rem;
+    .hero-img img {
+      max-width: 400px;
       border-radius: 10px;
-      font-weight: bold;
-      text-decoration: none;
-      background: #ffc745;
-      color: white;
-      display: inline-block;
-      transition: background 0.3s;
-    }
-
-    .hero-text a:hover {
-      background: #e6b630;
     }
 
     .section {
-      padding: 2rem 5%;
-      background: url('background.png') center/cover no-repeat;
+      padding: 60px 10%;
     }
 
-    .grid {
-      display: grid;
-      gap: 1rem;
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
 
-    .tech-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 1.1rem;
     }
 
-    .api-grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      margin-top: 1rem;
+    .section ul li {
+      margin-bottom: 10px;
     }
 
-    .card {
-      border: 2px dashed #000;
-      border-radius: 10px;
-      padding: 1rem;
-      background: white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      text-align: center;
-    }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
 
-    .card h3 {
-      margin-top: 0.5rem;
-    }
-
-    .card img {
-      max-width: 60px;
-      height: auto;
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
-      color: #666;
-      font-size: 0.95rem;
-      margin-top: 0.5rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #0d0d0d;
-      color: white;
+      .hero-img img {
+        max-width: 100%;
+        margin-top: 30px;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <nav>
-    <a href="https://t.me/fjilr" target="_blank">Telegram</a>
-    <a href="https://discordapp.com/users/javaassist" target="_blank">Discord</a>
-    <a href="https://funpay.com/users/6612395/" target="_blank">FunPay</a>
-  </nav>
-</header>
-
-<section class="hero-panel">
-  <div class="hero-card">
+  <section class="hero orange-gradient">
     <div class="hero-text">
-      <h1>Привет, я <span class="highlight">soc1ly</span></h1>
+      <h1>Привет, я <span style="color: white;">soc1ly</span></h1>
       <p>Разработчик <strong>Minecraft-Серверов</strong> и <strong>уникальных</strong> механик</p>
-      <a class="play-btn" href="http://www.honeymine.ru" target="_blank">🎮 Играть сейчас</a>
+      <a href="http://www.honeymine.ru" target="_blank">Мой основной проект</a>
     </div>
-    <div class="hero-image">
-      <img src="dragon.png" alt="Minecraft Dragon">
+    <div class="hero-img">
+      <img src="logo.png" alt="Minecraft Build" />
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <h2>Мой опыт в разработке Minecraft-Серверов:</h2>
-  <ul>
-    <li><strong>WellWorld</strong> — 120 онлайна</li>
-    <li><strong>HideForce</strong> — 100 онлайна</li>
-    <li><strong>ClearWorld</strong> — 90 онлайна</li>
-    <li><strong>SpaceGrief</strong> — 80 онлайна</li>
-    <li><strong>NetherDay</strong> — 60 онлайна</li>
-    <li><strong>SoulBox</strong> — 50 онлайна</li>
-    <li><strong>BWorld</strong> — 40 онлайна</li>
-  </ul>
-</section>
-
-<section class="section">
-  <h2>Языки Программирования которые я использую:</h2>
-  <div class="grid tech-grid">
-    <div class="card">
-      <h3>Java</h3>
-      <p>Активно использую</p>
-      <p>Разработка плагинов для Minecraft-Серверов</p>
-    </div>
-    <div class="card">
-      <h3>AutoHotKey</h3>
-      <p>Использую часто</p>
-      <p>Автоматизация задач и его упрощение</p>
-    </div>
-    <div class="card">
-      <h3>Python</h3>
-      <p>В процессе...</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Libraries / API которые я использую:</h2>
-  <div class="grid api-grid">
-    <div class="card">
-      <img src="vault.png" alt="VaultAPI" />
-      <h3>VaultAPI</h3>
-      <p>Vault — это API разрешений, чата и экономики</p>
-    </div>
-    <div class="card">
-      <img src="playpoints.jpg" alt="PlayerPoints" />
-      <h3>PlayerPoints</h3>
-      <p>PlayerPoints содержит API для поиска и изменения баланса очков игрока.</p>
-    </div>
-    <div class="card">
-      <img src="lucky-perms.jpg" alt="LuckPerms API" />
-      <h3>LuckPerms API</h3>
-      <p>Мощная библиотека для управления правами, группами и игроками.</p>
-    </div>
-    <div class="card">
-      <img src="decent-holograms.jpg" alt="Decent Holograms" />
-      <h3>Decent Holograms</h3>
-      <p>Имеется API для создания голограмм без стоек</p>
-    </div>
-    <div class="card">
-      <img src="axewg.png" alt="WE/WG API" />
-      <h3>WE/WG API</h3>
-      <p>WE/WG API — предоставляет стабильный и рабочий API</p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2025 soc1ly. Все права защищены.
-</footer>
+  <section class="section orange-gradient">
+    <h2>Мой опыт в разработке Minecraft-Серверов:</h2>
+    <ul>
+      <li><strong>WellWorld</strong> — 120 онлайна</li>
+      <li><strong>HideForce</strong> — 100 онлайна</li>
+      <li><strong>ClearWorld</strong> — 90 онлайна</li>
+      <li><strong>SpaceGrief</strong> — 80 онлайна</li>
+      <li><strong>NetherDay</strong> — 60 онлайна</li>
+      <li><strong>SoulBox</strong> — 50 онлайна</li>
+      <li><strong>BWorld</strong> — 40 онлайна</li>
+    </ul>
+  </section>
 
 </body>
 </html>
