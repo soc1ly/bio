@@ -5,7 +5,144 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>soc1ly | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Unbounded', sans-serif;
+      background: #f9f9f9;
+      color: #111;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    header, .hero, .section, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      background-color: #0d0d0d;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    header nav a {
+      color: #0d0d0d;
+      background-color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s ease, background 0.2s, color 0.2s;
+    }
+
+    header nav a:hover {
+      transform: scale(1.05);
+      background: #ffc745;
+      color: white;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3rem 5%;
+      background: linear-gradient(to right, #f2f2ff, #fff);
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 50%;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+
+    .hero-text a {
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      background: #ffc745;
+      color: white;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .hero-text a:hover {
+      background: #e6b630;
+    }
+
+    .section {
+      padding: 2rem 5%;
+      background: url('background.png') center/cover no-repeat;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .tech-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .api-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      margin-top: 1rem;
+    }
+
+    .card {
+      border: 2px dashed #000;
+      border-radius: 10px;
+      padding: 1rem;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-top: 0.5rem;
+    }
+
+    .card img {
+      max-width: 60px;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #0d0d0d;
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
@@ -17,16 +154,14 @@
   </nav>
 </header>
 
-<section class="hero-panel">
-  <div class="hero-card">
-    <div class="hero-text">
-      <h1>Привет, я <span class="highlight">soc1ly</span></h1>
-      <p>Разработчик <strong>Minecraft-Серверов</strong> и <strong>уникальных</strong> механик</p>
-      <a class="play-btn" href="http://www.honeymine.ru" target="_blank">🎮 Мой Основной сервер</a>
-    </div>
-    <div class="hero-image">
-      <img src="dragon.png" alt="Minecraft Dragon">
-    </div>
+<section class="hero">
+  <div class="hero-text">
+    <h1>Привет, я <span style="color: #ffc745;">soc1ly</span></h1>
+    <p>Разработчик <strong>Minecraft-Серверов</strong> и <strong>уникальных</strong> механик</p>
+    <a href="http://www.honeymine.ru" target="_blank">Мой основной проект</a>
+  </div>
+  <div class="hero-img">
+    <img src="logo.png" alt="Minecraft Build" style="max-width: 400px;" />
   </div>
 </section>
 
@@ -47,50 +182,49 @@
   <h2>Языки Программирования которые я использую:</h2>
   <div class="grid tech-grid">
     <div class="card">
-      <img src="java.png" alt="Java Icon" />
       <h3>Java</h3>
-      <p>Активно использую<br>Разработка плагинов для Minecraft-Серверов</p>
+      <p>Активно использую</p>
+      <p>Разработка плагинов для Minecraft-Серверов</p>
     </div>
     <div class="card">
-      <img src="ahk.png" alt="AHK Icon" />
       <h3>AutoHotKey</h3>
-      <p>Использую часто<br>Автоматизация задач и его упрощение</p>
+      <p>Использую часто</p>
+      <p>Автоматизация задач и его упрощение</p>
     </div>
     <div class="card">
-      <img src="python.png" alt="Python Icon" />
       <h3>Python</h3>
-      <p>В процессе...<br>Изучаю и применяю для автоматизации</p>
+      <p>В процессе...</p>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <h2>Libraries / API:</h2>
+  <h2>Libraries / API которые я использую:</h2>
   <div class="grid api-grid">
     <div class="card">
-      <img src="vault.png" alt="Vault API">
+      <img src="vault.png" alt="VaultAPI" />
       <h3>VaultAPI</h3>
       <p>Vault — это API разрешений, чата и экономики</p>
     </div>
     <div class="card">
-      <img src="playpoints.jpg" alt="PlayerPoints">
+      <img src="playpoints.jpg" alt="PlayerPoints" />
       <h3>PlayerPoints</h3>
-      <p>API для поиска и изменения баланса очков игрока</p>
+      <p>PlayerPoints содержит API для поиска и изменения баланса очков игрока.</p>
     </div>
     <div class="card">
-      <img src="lucky-perms.jpg" alt="LuckPerms">
+      <img src="lucky-perms.jpg" alt="LuckPerms API" />
       <h3>LuckPerms API</h3>
-      <p>Мощная библиотека для управления правами и группами</p>
+      <p>Мощная библиотека для управления правами, группами и игроками.</p>
     </div>
     <div class="card">
-      <img src="decent-holograms.jpg" alt="Decent Holograms">
+      <img src="decent-holograms.jpg" alt="Decent Holograms" />
       <h3>Decent Holograms</h3>
-      <p>API для создания голограмм без стоек</p>
+      <p>Имеется API для создания голограмм без стоек</p>
     </div>
     <div class="card">
-      <img src="axewg.png" alt="WE/WG API">
+      <img src="axewg.png" alt="WE/WG API" />
       <h3>WE/WG API</h3>
-      <p>Стабильный и рабочий API для WorldEdit / WorldGuard</p>
+      <p>WE/WG API — предоставляет стабильный и рабочий API</p>
     </div>
   </div>
 </section>
