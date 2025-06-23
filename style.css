@@ -94,8 +94,12 @@ header nav a:hover {
   gap: 1rem;
 }
 
-.tech-grid, .api-grid {
+.tech-grid {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.api-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   margin-top: 1rem;
 }
 
@@ -106,21 +110,16 @@ header nav a:hover {
   background: white;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   text-align: center;
-  transition: transform 0.3s ease;
 }
 
-.card:hover {
-  transform: scale(1.05);
+.card h3 {
+  margin-top: 0.5rem;
 }
 
 .card img {
   max-width: 60px;
   height: auto;
   margin-bottom: 0.5rem;
-}
-
-.card h3 {
-  margin-top: 0.5rem;
 }
 
 .card p {
