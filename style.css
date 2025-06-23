@@ -1,51 +1,77 @@
-
+/* Подключаемый шрифт */
 body {
   margin: 0;
   font-family: 'Unbounded', sans-serif;
-  background-color: #ffffff;
+  background-color: #0f0f0f;
+  color: #f0f0f0;
+  line-height: 1.6;
 }
 
+a {
+  color: #00bcd4;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #1de9b6;
+}
+
+/* Навигация */
+header {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+nav a {
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+/* Hero секция */
 .hero-panel {
-  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 100px 20px;
+  padding: 3rem 1rem;
+  background: linear-gradient(145deg, #202020, #1b1b1b);
 }
 
 .hero-card {
-  background: linear-gradient(135deg, #facc15, #f97316);
-  padding: 40px 60px;
-  border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1300px;
+  max-width: 1200px;
   width: 100%;
-  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1;
 }
 
 .hero-text h1 {
-  font-size: 48px;
-  margin: 0 0 20px;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text .highlight {
+  color: #00e676;
 }
 
 .hero-text p {
-  font-size: 18px;
-  margin: 0 0 20px;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .play-btn {
   display: inline-block;
-  background: white;
-  color: #333;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 10px 20px;
+  background: #00c853;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
   border-radius: 10px;
-}
-
-.hero-image img {
-  max-height: 150px;
-}
+  font-weight: bold;
+  box-shadow: 0 4px 10px rg
