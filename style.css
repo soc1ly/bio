@@ -8,13 +8,7 @@ html, body {
   font-family: 'Unbounded', sans-serif;
   background: #f9f9f9;
   color: #111;
-  position: relative;
   overflow-x: hidden;
-}
-
-header, .hero, .section, footer {
-  position: relative;
-  z-index: 1;
 }
 
 header {
@@ -48,26 +42,32 @@ header nav a:hover {
   color: white;
 }
 
+/* HERO */
+
 .hero {
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 3rem 5%;
-  background: linear-gradient(to right, #f2f2ff, #fff);
-  flex-wrap: wrap;
+  text-align: center;
+  min-height: 80vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #fefcea 0%, #f1da36 100%);
+  overflow: hidden;
 }
 
 .hero-text {
-  max-width: 50%;
+  z-index: 2;
 }
 
 .hero-text h1 {
   font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .hero-text p {
   font-size: 1.2rem;
-  margin: 1rem 0;
+  margin-bottom: 1.5rem;
 }
 
 .hero-text a {
@@ -75,34 +75,48 @@ header nav a:hover {
   border-radius: 10px;
   font-weight: bold;
   text-decoration: none;
-  background: #ffc745;
+  background: #111;
   color: white;
-  display: inline-block;
   transition: background 0.3s;
 }
 
 .hero-text a:hover {
-  background: #e6b630;
+  background: #333;
 }
 
-.hero-img {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 1rem;
+.highlight {
+  color: #ffc745;
 }
 
-.hero-img img {
-  max-width: 480px;
-  width: 100%;
-  height: auto;
+.background-blur {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 199, 69, 0.25), transparent 70%);
+  filter: blur(120px);
+  z-index: 1;
 }
+
+/* SECTION STYLES */
 
 .section {
   padding: 2rem 5%;
   background: url('background.png') center/cover no-repeat;
 }
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section ul {
+  list-style: disc inside;
+  line-height: 1.8;
+}
+
+/* GRID STYLES */
 
 .grid {
   display: grid;
@@ -143,6 +157,8 @@ header nav a:hover {
   font-size: 0.95rem;
   margin-top: 0.5rem;
 }
+
+/* FOOTER */
 
 footer {
   text-align: center;
