@@ -69,6 +69,52 @@ header nav a:hover {
   margin: 1rem 0;
 }
 
+.hero-panel {
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+}
+
+.hero-card {
+  background: linear-gradient(135deg, #facc15, #f97316);
+  padding: 40px 60px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  width: 100%;
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin: 0 0 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin: 0 0 20px;
+}
+
+.play-btn {
+  display: inline-block;
+  background: white;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.hero-image img {
+  max-height: 150px;
+}
+
+
 .hero-text a {
   padding: 0.75rem 1.5rem;
   border-radius: 10px;
