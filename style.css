@@ -1,51 +1,114 @@
-.new-hero {
-  background: linear-gradient(135deg, #facc15, #f97316); /* жёлто-оранжевый */
-  padding: 60px 20px;
-  color: #fff;
+body {
+  margin: 0;
   font-family: 'Unbounded', sans-serif;
+  background-color: #fefefe;
+  color: #111;
 }
 
-.hero-content {
+header {
+  padding: 20px;
+  background: #111;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero-panel {
+  background: linear-gradient(135deg, #facc15, #f97316);
+  padding: 80px 20px;
   display: flex;
-  align-items: center;
+  justify-content: center;
+}
+
+.hero-card {
+  background-color: #6366f1;
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   max-width: 1200px;
-  margin: auto;
-  flex-wrap: wrap;
+  width: 100%;
+  color: white;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  gap: 30px;
 }
 
-.text-block {
-  max-width: 500px;
+.hero-text h1 {
+  font-size: 42px;
+  margin: 0 0 16px;
 }
 
-.text-block h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.text-block p {
-  font-size: 20px;
-  margin-bottom: 30px;
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 24px;
 }
 
 .play-button {
-  display: inline-block;
-  background: white;
-  color: #1e293b;
-  font-weight: bold;
-  padding: 12px 24px;
+  background-color: white;
+  color: #6366f1;
+  padding: 10px 20px;
   border-radius: 12px;
+  font-weight: 700;
   text-decoration: none;
-  font-size: 16px;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
 .play-button:hover {
-  background: #f3f4f6;
+  background-color: #e0e7ff;
 }
 
-.image-block img {
-  max-width: 400px;
-  height: auto;
-  border-radius: 20px;
+.hero-image img {
+  max-width: 300px;
+  border-radius: 12px;
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background-color: #f3f4f6;
+  padding: 20px;
+  border-radius: 16px;
+  flex: 1 1 300px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card img {
+  max-width: 64px;
+  margin-bottom: 12px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: white;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .hero-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    margin-top: 20px;
+  }
 }
