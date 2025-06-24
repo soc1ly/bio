@@ -17,6 +17,22 @@
       background: #f9f9f9;
       color: #111;
       overflow-x: hidden;
+      scrollbar-width: thin;
+      scrollbar-color: #e78a1d #f9f9f9;
+    }
+
+    body::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    body::-webkit-scrollbar-track {
+      background: #f9f9f9;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: #e78a1d;
+      border-radius: 10px;
+      border: 2px solid #f9f9f9;
     }
 
     header {
@@ -64,6 +80,7 @@
 
     .menu-container {
       width: 1100px;
+      max-width: 95%;
       min-height: 300px;
       background: linear-gradient(90deg, #f7d33b 0%, #e78a1d 100%);
       border-radius: 35px;
@@ -77,6 +94,7 @@
       opacity: 0;
       animation-delay: 1s;
       animation-fill-mode: forwards;
+      flex-wrap: wrap;
     }
 
     .menu-left {
@@ -88,6 +106,7 @@
       opacity: 0;
       transform: translateY(20px);
       animation: fadeUp 1s ease forwards;
+      will-change: opacity, transform;
     }
 
     .menu-left h1 {
@@ -114,6 +133,7 @@
       margin-top: 15px;
       text-decoration: none;
       display: inline-block;
+      transition: transform 0.3s ease;
     }
 
     .menu-button span {
@@ -127,7 +147,6 @@
 
     .menu-button:hover {
       transform: scale(1.05);
-      transition: transform 0.3s ease;
     }
 
     .menu-right img {
@@ -224,6 +243,38 @@
       0% { opacity: 0; transform: translateY(-20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+
+    @media (max-width: 768px) {
+      .menu-container {
+        flex-direction: column;
+        padding: 30px 20px;
+        width: 95%;
+        text-align: center;
+      }
+
+      .menu-right img {
+        width: 200px;
+        margin-top: 20px;
+      }
+
+      header nav {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .menu-left h1 {
+        font-size: 1.6rem;
+      }
+
+      .menu-button {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -292,22 +343,22 @@
     <div class="card">
       <img src="img/playpoints.jpg" alt="PlayerPoints">
       <h3>PlayerPoints</h3>
-      <p>PlayerPoints содержит API для поиска и изменения баланса очков игрока.</p>
+      <p>API для изменения баланса очков игрока</p>
     </div>
     <div class="card">
       <img src="img/lucky-perms.jpg" alt="LuckPerms">
       <h3>LuckPerms API</h3>
-      <p>Мощная библиотека для управления правами, группами и игроками.</p>
+      <p>Библиотека управления правами и группами</p>
     </div>
     <div class="card">
       <img src="img/decent-holograms.jpg" alt="Decent Holograms">
       <h3>Decent Holograms</h3>
-      <p>Имеется API для создания голограмм без стоек</p>
+      <p>API для голограмм без стоек</p>
     </div>
     <div class="card">
       <img src="img/axewg.png" alt="WE/WG API">
       <h3>WE/WG API</h3>
-      <p>WE/WG API — предоставляет стабильный и рабочий API</p>
+      <p>Предоставляет рабочий API</p>
     </div>
   </div>
 </section>
