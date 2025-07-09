@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
+
       box-sizing: border-box;
     }
 
@@ -39,7 +40,7 @@
       background-color: #fff;
       padding: 1rem 2rem;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       position: sticky;
@@ -51,12 +52,16 @@
       animation-fill-mode: forwards;
     }
 
-    header nav {
+    .nav-left, .nav-right {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
-      justify-content: center;
-      padding: 0.4rem 0.8rem;
+      align-items: center;
+      margin: 0 10px;  
+    }
+
+    header nav {
+      margin: 0 15px;  
     }
 
     header nav a {
@@ -69,6 +74,7 @@
       box-shadow: 0 0 0 2px #fff inset, 0 0 0 2px #111;
       transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
       display: inline-block;
+      margin: 0 8px;  
     }
 
     header nav a:hover {
@@ -257,9 +263,14 @@
         margin-top: 20px;
       }
 
-      header nav {
+      header {
         flex-direction: column;
-        gap: 0.5rem;
+        align-items: stretch;
+      }
+
+      .nav-left, .nav-right {
+        justify-content: center;
+        margin: 0.5rem 0;
       }
 
       .grid {
@@ -280,11 +291,19 @@
 <body>
 
 <header>
-  <nav>
-    <a href="https://t.me/soc1alniy" target="_blank">Telegram</a>
-    <a href="https://discordapp.com/users/javaassist" target="_blank">Discord</a>
-    <a href="https://funpay.com/users/6612395/" target="_blank">FunPay</a>
-  </nav>
+  <div class="nav-left">
+    <nav>
+      <a href="/">Главная страница</a>
+      <a href="/services">Услуги</a>
+    </nav>
+  </div>
+  <div class="nav-right">
+    <nav>
+      <a href="https://t.me/soc1alniy" target="_blank">Telegram</a>
+      <a href="https://discordapp.com/users/javaassist" target="_blank">Discord</a>
+      <a href="https://funpay.com/users/6612395/" target="_blank">FunPay</a>
+    </nav>
+  </div>
 </header>
 
 <div class="menu-container">
