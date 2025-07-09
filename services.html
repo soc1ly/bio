@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>soc1ly | Услуги</title>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Unbounded', sans-serif;
+      background: #f9f9f9;
+      color: #111;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body {
+      scrollbar-width: thin;
+      scrollbar-color: #e78a1d #f9f9f9;
+      flex-grow: 1;
+    }
+
+    body::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    body::-webkit-scrollbar-track {
+      background: #f9f9f9;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: #e78a1d;
+      border-radius: 10px;
+      border: 2px solid #f9f9f9;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      opacity: 0;
+      animation: fadeDown 1s ease forwards;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    header nav a {
+      color: #111;
+      background: #fff;
+      padding: 0.5rem 1.2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 0 0 2px #fff inset, 0 0 0 2px #111;
+      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+
+    header nav a:hover {
+      background: #e78a1d;
+      color: #fff;
+      transform: scale(1.1);
+      box-shadow: none;
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 2rem 5%;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 95%;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+      animation-delay: 1.2s;
+      animation-fill-mode: forwards;
+    }
+
+    .services-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .service-card {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 1rem 1.5rem;
+      gap: 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    /* Задержка анимации для каждого сервиса (по порядку) */
+    .service-card:nth-child(1) {
+      animation-delay: 1.8s;
+    }
+    .service-card:nth-child(2) {
+      animation-delay: 2.3s;
+    }
+    .service-card:nth-child(3) {
+      animation-delay: 2.8s;
+    }
+
+    .service-card img {
+      width: 64px;
+      height: 64px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+
+    .service-info {
+      flex-grow: 1;
+    }
+
+    .service-info h3 {
+      margin: 0 0 0.3rem 0;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #3b2606;
+    }
+
+    .service-info p {
+      margin: 0;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .order-button {
+      background: #e78a1d;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.4rem;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .order-button:hover {
+      background: #f7d33b;
+      color: #3b2606;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0.5rem;
+      background: #0d0d0d;
+      color: white;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 3.5s;
+      animation-fill-mode: forwards;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      margin-top: auto;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-left, .nav-right {
+        justify-content: center;
+        margin: 0.5rem 0;
+      }
+
+      .services-container {
+        gap: 1rem;
+      }
+
+      .service-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .service-card img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .order-button {
+        align-self: stretch;
+        text-align: center;
+        padding: 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-left">
+      <nav>
+        <a href="/">Главная страница</a>
+        <a href="services.html">Услуги</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <nav>
+        <a href="https://t.me/soc1alniy" target="_blank">Telegram</a>
+        <a href="https://discordapp.com/users/javaassist" target="_blank">Discord</a>
+        <a href="https://funpay.com/users/6612395/" target="_blank">FunPay</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Услуги</h1>
+
+    <div class="services-container">
+      <div class="service-card">
+        <img src="img/sborka.png" alt="Сборка под ключ" />
+        <div class="service-info">
+          <h3>Сборка под ключ</h3>
+          <p>500р</p>
+        </div>
+        <a href="https://t.me/soc1alniy" target="_blank" class="order-button">Заказать</a>
+      </div>
+
+      <div class="service-card">
+        <img src="img/plugin.png" alt="Плагин под ключ" />
+        <div class="service-info">
+          <h3>Плагин под ключ</h3>
+          <p>200р</p>
+        </div>
+        <a href="https://t.me/soc1alniy" target="_blank" class="order-button">Заказать</a>
+      </div>
+
+      <div class="service-card">
+        <img src="img/config.png" alt="Настройка конфигурации" />
+        <div class="service-info">
+          <h3>Настройка конфигурации</h3>
+          <p>Цена договорная</p>
+        </div>
+        <a href="https://t.me/soc1alniy" target="_blank" class="order-button">Заказать</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 soc1ly. Все права защищены.
+  </footer>
+</body>
+</html>
