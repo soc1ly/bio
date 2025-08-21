@@ -1,5 +1,11 @@
+// 
+// 𒐏𒆸𐏓1𒁇𒌨
+// 𒐏𒋻𒌨𒈦 𒇲𒋻𒑣𒇲𒋻𒁀𒆸𒈦𒋻𒐖 𒐕 𒆸𒁀𐎣𒑚𒐏𒐕𐎣𒐕𐏓𒐕𒇲𒆸𐎏𒋻𒐖 𒋝𒆸𒐏𒇬𒆸𒁓𒐕𒐖𒆸𐎠 𒐏𒆸𐏓1𒁇𒌨
+// 
+// сайт разработан и обфусифицирован господином soc1ly
+// 2 0 2 5
+// 
 let hasUserInteracted = false;
-
 document.addEventListener('DOMContentLoaded', () => {
   const startScreen = document.getElementById('start-screen');
   const startText = document.getElementById('start-text');
@@ -44,12 +50,11 @@ function initializeVisitorCounter() {
   let totalVisitors = localStorage.getItem('totalVisitorCount');
 
   if (!totalVisitors) {
-    totalVisitors = 289; // стартовое число
+    totalVisitors = 1259;
   } else {
     totalVisitors = parseInt(totalVisitors);
   }
 
-  // каждый заход +1
   totalVisitors++;
   localStorage.setItem('totalVisitorCount', totalVisitors);
 
@@ -248,3 +253,4 @@ function initializeVisitorCounter() {
 
   typeWriterStart();
 });
+
