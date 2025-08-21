@@ -19,29 +19,13 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   perspective: 1000px;
-  cursor: none;
 }
-
-
-.custom-cursor {
-  position: fixed;
-  width: 32px;
-  height: 32px;
-  background: url('assets/custom_cursor.png') no-repeat center center;
-  background-size: contain;
-  pointer-events: none;
-  z-index: 10000;
-  transition: transform 0.1s ease-out;
-  filter: hue-rotate(var(--cursor-hue, 0deg)); 
-}
-
 
 body.home-theme {
   --primary-gradient: from-purple-400;
   --secondary-gradient: to-pink-600;
   --primary-color: #00CED1; 
   --secondary-color: #FF6B9E;
-  --cursor-hue: 180deg; 
 }
 
 body.hacker-theme {
@@ -49,7 +33,6 @@ body.hacker-theme {
   --secondary-gradient: to-teal-600;
   --primary-color: #22C55E; 
   --secondary-color: #2DD4BF;
-  --cursor-hue: 120deg; 
 }
 
 body.rain-theme {
@@ -57,7 +40,6 @@ body.rain-theme {
   --secondary-gradient: to-blue-600;
   --primary-color: #1E3A8A; 
   --secondary-color: #2563EB;
-  --cursor-hue: 240deg; 
 }
 
 body.anime-theme {
@@ -65,7 +47,6 @@ body.anime-theme {
   --secondary-gradient: to-red-400;
   --primary-color: #DC2626; 
   --secondary-color: #F87171;
-  --cursor-hue: 0deg; 
 }
 
 body.car-theme {
@@ -73,14 +54,11 @@ body.car-theme {
   --secondary-gradient: to-yellow-300;
   --primary-color: #EAB308; 
   --secondary-color: #FACC15;
-  --cursor-hue: 60deg; 
 }
-
 
 .video-background {
   transform: scale(1.02);
 }
-
 
 #hacker-overlay {
   mix-blend-mode: screen;
@@ -91,7 +69,6 @@ body.car-theme {
   z-index: 15;
   opacity: 0.8;
 }
-
 
 .glitch-overlay {
   pointer-events: none;
@@ -106,14 +83,12 @@ body.car-theme {
   mix-blend-mode: color-dodge;
 }
 
-
 #profile-block, #skills-block {
   transform-style: preserve-3d;
-  transition: transform 0.5s ease-out, background 0.3s ease, border-opacity 0.3s ease, backdrop-filter 0.3s ease, opacity 0.3s ease, border-color 0.3s ease; /* Flüssigere Transition */
+  transition: transform 0.5s ease-out, background 0.3s ease, border-opacity 0.3s ease, backdrop-filter 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
   width: 640px;
   max-width: 90vw;
 }
-
 
 #profile-block.profile-appear {
   animation: slideInFade 1s ease-out forwards;
@@ -130,11 +105,9 @@ body.car-theme {
   }
 }
 
-
 .border-theme {
   border-color: var(--primary-color);
 }
-
 
 .profile-container {
   position: relative;
@@ -163,7 +136,6 @@ body.car-theme {
 .profile-container.fast-orbit::after {
   animation: fast-orbit 0.5s linear forwards;
 }
-
 
 .social-links {
   display: flex;
@@ -213,7 +185,6 @@ body.car-theme {
   opacity: 0.3;
 }
 
-
 .animated-border {
   position: relative;
 }
@@ -236,7 +207,6 @@ body.car-theme {
   animation: border-spin 2s linear infinite;
   z-index: -1;
 }
-
 
 .led-border {
   position: relative;
@@ -263,12 +233,10 @@ body.car-theme {
   z-index: -1;
 }
 
-
 #home-theme, #hacker-theme, #rain-theme, #anime-theme, #car-theme, #results-theme {
   background-image: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
   touch-action: manipulation;
 }
-
 
 .name-gradient {
   background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
@@ -284,36 +252,29 @@ body.car-theme {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
-
 #profile-bio {
   font-family: 'Courier New', monospace;
 }
-
 
 .profilschein {
   background-image: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
 }
 
-
 .social-border {
   border-color: var(--primary-color);
 }
-
 
 .profile-border {
   border-color: var(--primary-color);
 }
 
-
 .visitor-icon {
   stroke: var(--primary-color);
 }
 
-
 .visitor-count {
   color: var(--primary-color);
 }
-
 
 .volume-icon {
   stroke: var(--primary-color);
@@ -324,7 +285,6 @@ body.car-theme {
   stroke: var(--secondary-color);
 }
 
-
 .volume-slider {
   background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 }
@@ -332,7 +292,6 @@ body.car-theme {
 .volume-slider::-webkit-slider-thumb {
   border-color: var(--primary-color);
 }
-
 
 .transparency-icon {
   stroke: var(--primary-color);
@@ -343,7 +302,6 @@ body.car-theme {
   stroke: var(--secondary-color);
 }
 
-
 .transparency-slider {
   background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 }
@@ -352,26 +310,13 @@ body.car-theme {
   border-color: var(--primary-color);
 }
 
-
 .skill-title {
   background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 }
 
-
 .skill-bar {
   background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 }
-
-
-.cursor-trail {
-  background: radial-gradient(circle, var(--primary-color) 20%, var(--secondary-color) 80%);
-  opacity: 0.8;
-  border-radius: 50%;
-  pointer-events: none;
-  position: fixed;
-  z-index: 10000;
-}
-
 
 .controls {
   position: fixed;
@@ -403,10 +348,9 @@ body.car-theme {
 }
 
 .theme-button:hover {
-  transform: scale(1.1);
+  transform: scale(2.0);
   border-color: rgba(255, 255, 255, 0.8);
 }
-
 
 .top-controls {
   position: fixed;
@@ -421,14 +365,6 @@ body.car-theme {
   gap: 12px;
   z-index: 25;
 }
-
-
-.volume-control, .transparency-control {
-  z-index: 25;
-  background: none;
-  padding: 0;
-}
-
 
 .volume-slider, .transparency-slider {
   -webkit-appearance: none;
@@ -458,7 +394,6 @@ body.car-theme {
   background: #E0E0FF;
 }
 
-
 .badge-container {
   position: relative;
   display: inline-block;
@@ -473,7 +408,6 @@ body.car-theme {
 .badge-container img {
   image-rendering: pixelated;
 }
-
 
 .badge {
   width: 22px;
@@ -502,7 +436,6 @@ body.car-theme {
   transform: rotateY(180deg);
 }
 
-
 .badge-group {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -514,9 +447,7 @@ body.car-theme {
   flex-wrap: wrap;
 }
 
-
 @media (max-width: 768px) {
-
   #profile-block, #skills-block {
     width: 85vw;
     max-width: 360px;
@@ -525,12 +456,10 @@ body.car-theme {
     transform: translateX(-50%);
   }
 
-
   .profile-picture {
     width: 80px;
     height: 80px;
   }
-
 
   #profile-name {
     font-size: 18px;
@@ -539,7 +468,6 @@ body.car-theme {
   #profile-bio {
     font-size: 12px;
   }
-
 
   .badge-group {
     gap: 4px;
@@ -551,7 +479,6 @@ body.car-theme {
     height: 16px;
   }
 
-
   .social-links {
     gap: 8px;
     padding: 6px 8px;
@@ -561,7 +488,6 @@ body.car-theme {
     width: 20px;
     height: 20px;
   }
-
 
   .visitor-counter {
     font-size: 10px;
@@ -576,7 +502,6 @@ body.car-theme {
     height: 14px;
   }
 
-
   .skills-title {
     font-size: 16px;
   }
@@ -585,7 +510,6 @@ body.car-theme {
     width: 16px;
     height: 16px;
   }
-
 
   .controls {
     bottom: calc(50% - 200px - 10px);
@@ -599,7 +523,6 @@ body.car-theme {
     height: 25px;
     font-size: 12px;
   }
-
 
   .top-controls {
     bottom: calc(50% - 200px - 60px);
@@ -618,7 +541,6 @@ body.car-theme {
     height: 16px;
   }
 
-
   #results-button-container {
     top: calc(50% + 200px - 20px);
     left: 50%;
@@ -635,12 +557,10 @@ body.car-theme {
     width: 140px;
   }
 
-
   #start-text {
     font-size: 18px;
   }
 }
-
 
 @keyframes led-glow {
   0% {
