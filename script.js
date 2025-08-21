@@ -50,7 +50,7 @@ function initializeVisitorCounter() {
   let totalVisitors = localStorage.getItem('totalVisitorCount');
 
   if (!totalVisitors) {
-    totalVisitors = 1259;
+    totalVisitors = 999;
   } else {
     totalVisitors = parseInt(totalVisitors);
   }
@@ -253,4 +253,5 @@ function initializeVisitorCounter() {
 
   typeWriterStart();
 });
+
 
